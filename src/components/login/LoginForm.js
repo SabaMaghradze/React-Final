@@ -38,7 +38,7 @@ export const LoginForm = () => {
 
             <Controller name='password' control={control} defaultValue='' render={({ field }) => {
                 const { name, onChange } = field;
-                return <Input type='Password' name={name} onChange={onChange} label='Password' error={!!errors.password} helperText={errors.password?.message} />
+                return <Input type='password' name={name} onChange={onChange} label='Password' error={!!errors.password} helperText={errors.password?.message} />
             }} />
 
             <Button onClick={handleSubmit(onSubmit)} disabled={!isValid} >Log In</Button>

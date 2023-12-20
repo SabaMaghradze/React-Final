@@ -14,9 +14,7 @@ root.render(
     <BrowserRouter>
         <Provider store={store} >
             <PersistGate persistor={persistedStore}>
-                <React.StrictMode>
-                    <App />
-                </React.StrictMode>
+                <App />
             </PersistGate>
         </Provider>
     </BrowserRouter>

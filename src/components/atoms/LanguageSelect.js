@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { FormControl, Select } from '@mui/material'
-import { MenuItem } from '@mui/material'
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { FormControl, Select } from '@mui/material';
+import { MenuItem } from '@mui/material';
 
 const languageCodes = {
     en: "English",
@@ -10,7 +10,6 @@ const languageCodes = {
 };
 
 export const LanguageSelect = () => {
-
 
     const [langCode, setLangCode] = useState(() => {
         const storedLangCode = localStorage.getItem('langCode');

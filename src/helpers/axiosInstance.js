@@ -10,6 +10,7 @@ axiosInstance.interceptors.request.use(async (req) => {
     const refreshToken = localStorage.getItem('refreshToken');
     // first we get the token and refresh token from local storage, then, if they are non-existent, that means the user is not logged in.
     if (!token || !refreshToken) return req;
+    
     const isExpired = checkTokenValidity(token);
 
     if (!isExpired) {

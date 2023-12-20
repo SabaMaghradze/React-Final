@@ -5,14 +5,14 @@ import englishLocales from './en.json';
 import georgianLocales from './ka.json';
 
 i18n.use(initReactI18next).init({
-    lng: 'eng',
-    fallBackLng: 'eng',
+    lng: 'en',
+    fallBackLng: 'en',
     resources: {
-        eng: {
+        en: {
             translation: englishLocales
         },
         ka: {
             translation: georgianLocales
-        }
-    }
+        },
+    },
 });

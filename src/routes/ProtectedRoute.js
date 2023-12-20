@@ -5,8 +5,7 @@ export const ProtectedRoute = ({ children, hasAccess }) => {
     if (hasAccess) {
         return children;
     };
-
     return (
-        <Navigate to='/' />
+        <Navigate to='/login' />
     )
 };

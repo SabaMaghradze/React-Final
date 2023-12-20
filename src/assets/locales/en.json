@@ -1,5 +1,11 @@
 {
     "home": "Homepage",
     "sign_in": "Sign in",
-    "email": "Email"
+    "email": "Email",
+    "sign_up": "Sign Up",
+    "add_products": "Add Products",
+    "add_product": "Add Product",
+    "edit": "Edit",
+    "delete": "Delete",
+    "update": "Update"
 }
