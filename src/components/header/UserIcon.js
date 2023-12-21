@@ -45,7 +45,6 @@ export const UserIcon = () => {
                         <Button onClick={() => {
                             dispatch(logout())
                             navigate('/')
-
                         }}>
                             Log Out
                         </Button>

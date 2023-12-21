@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { fetchHomeProducts } from './redux';
 import { Header } from './components/header/Header';
 import { Grid } from '@mui/material';
+import { Homepage } from './pages';
 
 function App() {
 

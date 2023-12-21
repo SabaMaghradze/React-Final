@@ -32,7 +32,6 @@ const cartSlice = createSlice({
                     return cartElement.product._id === productId ? { ...cartElement, quantity: cartElement.quantity + 1 } : { ...cartElement }
                 });
                 state.cartItems = updatedCart;
-                console.log(updatedCart);
             } else {
                 state.cartItems.push({ product: action.payload, quantity: 1 });
             };

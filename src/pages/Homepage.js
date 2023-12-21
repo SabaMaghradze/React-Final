@@ -8,6 +8,7 @@ import { t } from 'i18next';
 import { useUser } from '../hooks';
 import { isAdmin } from '../helpers';
 import { addToCart, removeFromCart } from '../redux/slices/cartSlice';
+import { HomePageProducts } from '../components/products/HomePage';
 
 export const Homepage = () => {
     const { homeProducts, loading } = useProduct();
@@ -17,25 +18,29 @@ export const Homepage = () => {
     const { userData } = useUser();
 
     return (
-        <LoadingWrapper isLoading={loading}>
-            {homeProducts.map((product) => {
-                return (
-                    <div key={product._id}>
-                        <h2>Name: {product.name}</h2>
-                        {isAdmin(userData) && <>
-                            <button onClick={() => {
-                                dispatch(setSelectedProduct(product));
-                                navigate(`/products/${product._id}/edit`);
-                            }}>
-                                {t('edit')}
-                            </button>
-                            <button onClick={() => dispatch(deleteProduct(product._id))}>{t('delete')}</button>
-                            <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
-                            <button onClick={() => dispatch(removeFromCart(product._id))}>Remove From Cart</button>
-                        </>}
-                    </div>
-                )
-            })}
-        </LoadingWrapper>
+        <HomePageProducts />
     )
+
+    // <LoadingWrapper isLoading={loading}>
+    //     {homeProducts.map((product) => {
+    //         return (
+    //             <div key={product._id}>
+    //                 <h2>Name: {product.name}</h2>
+    //                 <h2>Price: {product.price}$</h2>
+    //                 {isAdmin(userData) && <>
+    //                     <button onClick={() => {
+    //                         dispatch(setSelectedProduct(product));
+    //                         navigate(`/products/${product._id}/edit`);
+    //                     }}>
+    //                         {t('edit')}
+    //                     </button>
+    //                     <button onClick={() => dispatch(deleteProduct(product._id))}>{t('delete')}</button>
+    //                     <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
+    //                     <button onClick={() => dispatch(removeFromCart(product._id))}>Remove From Cart</button>
+    //                 </>}
+    //             </div>
+    //         )
+    //     })}
+    // </LoadingWrapper>
+
 };

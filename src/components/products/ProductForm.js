@@ -20,11 +20,11 @@ export const ProductForm = () => {
     mode: 'onChange'
   });
 
-  useEffect(() => {
-    if (selectedProduct) {
-      setImage(selectedProduct.image);
-    }
-  }, [selectedProduct]);
+  // useEffect(() => {
+  //   if (selectedProduct) {
+  //     setImage(selectedProduct.image);
+  //   }
+  // }, [selectedProduct]);
 
   useEffect(() => {
     return () => {
@@ -38,8 +38,8 @@ export const ProductForm = () => {
   const onSubmit = async (data) => {
     try {
       await dispatch(addProduct({ product: { ...data, image }, productId: selectedProduct?._id }))
-        .unwrap()
-        .then(() => {
+      .unwrap()
+      .then(() => {
           navigate('/')
           dispatch(fetchHomeProducts())
         })
