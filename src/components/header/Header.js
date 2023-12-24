@@ -8,7 +8,7 @@ import { useCart } from '../../hooks';
 import { CartDrawer } from './CartDrawer';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { ProductCategories } from './ProductCategories';
 
 const StyledAppBar = styled(AppBar)(() => ({
     backgroundColor: '#131921',
@@ -48,6 +48,7 @@ export const Header = () => {
                         <LanguageSelect />
                     </Box>
                 </StyledToolBar>
+                <ProductCategories />
             </StyledAppBar>
             <CartDrawer isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} cartItems={cartItems} />
         </Box>

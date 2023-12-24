@@ -26,6 +26,7 @@ const StyledButtonCointainer = styled(Box)(() => ({
 }));
 
 export const CartDrawer = ({ isCartOpen, setIsCartOpen, cartItems }) => {
+    
     const { userData } = useUser();
     const dispatch = useDispatch();
 

@@ -7,6 +7,8 @@ import { Box } from '@mui/material';
 import { useCart } from '../../../hooks';
 import { removeFromCart, addToCart } from '../../../redux/slices/cartSlice';
 import { Text } from '../../atoms';
+import { useNavigate } from 'react-router-dom';
+import { deleteProduct, setSelectedProduct } from '../../../redux/slices/productSlice';
 
 export const ProductCardActions = ({ product }) => {
 
@@ -16,9 +18,20 @@ export const ProductCardActions = ({ product }) => {
     const productInCart = cartItems.find((item) => item.product._id === product._id);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     if (isAdmin(userData)) {
-        return <h2>test</h2>
+        return (
+            <Box>
+                <Button onClick={() => {
+                    navigate(`/products/${product._id}/edit`);
+                    dispatch(setSelectedProduct(product));
+                }}>Edit</Button>
+                <Button onClick={() => {
+                    dispatch(deleteProduct(product._id));
+                }}>Remove</Button>
+            </Box>
+        )
     };
 
     return <Box sx={{ display: 'flex', alignItems: 'center' }}>

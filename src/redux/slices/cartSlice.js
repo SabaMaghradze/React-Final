@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const getTotalQuantity = (arr) => {
     let sum = 0;
@@ -40,6 +40,7 @@ const cartSlice = createSlice({
 
         },
         removeFromCart: (state, action) => {
+            
             const productId = action.payload;
 
             const productInCart = state.cartItems.find((item) => item.product._id === productId);

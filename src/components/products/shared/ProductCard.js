@@ -18,11 +18,11 @@ const StyledInfoContainer = styled(Box)(() => ({
 }));
 
 export const ProductCard = ({ product }) => {
-    const { name, _id, price, image } = product;
+    const { name, _id, price, image, category } = product;
     return (
         <Grid item xs={12} sm={12} md={4} lg={3} >
-            <Card>
-                <Link>
+            <Card sx={{borderRadius: '20px'}}>
+                <Link to={`/products/categories/${category}/${_id}`}>
                     <StyledImage src={image} />
                     <StyledInfoContainer>
                         <Text>Name: {name}</Text>
