@@ -5,7 +5,6 @@ import { LoadingWrapper, Text } from '../../atoms';
 import { styled, Box } from '@mui/material';
 import { ProductCardActions } from '../shared';
 
-
 const Container = styled(Box)(() => ({
   width: '100%',
   display: 'flex',
@@ -33,9 +32,8 @@ export const SingleProduct = () => {
     getData(`/products/category/${categoryName}/${id}`);
   }, [id, categoryName, getData]);
 
-  console.log('id', id, 'categoryname', categoryName);
-
   const { image, name, description, brand } = data?.product || {};
+  console.log(name);
 
   return (
     <LoadingWrapper isLoading={loading}>

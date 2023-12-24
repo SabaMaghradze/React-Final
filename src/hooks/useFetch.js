@@ -13,7 +13,7 @@ export const useFetch = () => {
     const getData = useCallback(async (url) => {
         try {
             setState((prev) => ({ ...prev, loading: true }));
-            const data = await axiosInstance.get(url);
+            const { data } = await axiosInstance.get(url);
             setState((prev) => ({ ...prev, loading: false, data }));
         } catch (error) {
             setState((prev) => ({ ...prev, loading: false, error: true }));
