@@ -13,7 +13,6 @@ export const authenticateUser = createAsyncThunk('user/authenticateUser', async 
     };
 });
 
-
 const userSlice = createSlice({
     name: 'user',
     initialState: {

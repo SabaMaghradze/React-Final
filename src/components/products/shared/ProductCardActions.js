@@ -36,15 +36,15 @@ export const ProductCardActions = ({ product }) => {
         )
     };
 
-    return <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        {!productInCart ? <Button onClick={() => dispatch(addToCart(product))}>Add to Cart</Button>
+    return <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+        {!productInCart ? <Button variant='contained' styles={{ fontSize: '15px', borderRadius: '10px' }} onClick={() => dispatch(addToCart(product))}>Add to Cart</Button>
             :
             <>
-                <Button onClick={() => dispatch(removeFromCart(product._id))}>
+                <Button styles={{fontSize: '20px'}} onClick={() => dispatch(removeFromCart(product._id))}>
                     -
                 </Button>
-                <Text>{productInCart.quantity}</Text>
-                <Button onClick={() => {
+                <Text styles={{fontSize: '20px'}}>{productInCart.quantity}</Text>
+                <Button styles={{ fontSize: '20px' }} onClick={() => {
                     dispatch(addToCart(product))
                     console.log(product);
                 }}>

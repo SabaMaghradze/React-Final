@@ -41,13 +41,13 @@ export const SingleProduct = () => {
         <StyledImage src={image} />
         <Box>
           <Description>
-            <Text>Product Name: {name}</Text>
+            <Text styles={{ fontSize: '30px' }}>Product Name: {name}</Text>
           </Description>
           <Description>
-            <Text>Brand: {brand}</Text>
+            <Text styles={{ fontSize: '30px' }}>Brand: {brand}</Text>
           </Description>
           <Description>
-            <Text>Description: {description}</Text>
+            <Text styles={{ fontSize: '30px' }}>Description: {description}</Text>
           </Description>
           <ProductCardActions product={data?.product} />
         </Box>

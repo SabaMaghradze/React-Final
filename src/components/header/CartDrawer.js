@@ -45,7 +45,7 @@ export const CartDrawer = ({ isCartOpen, setIsCartOpen, cartItems }) => {
                                 <Box sx={{ paddingLeft: 5 }}>
                                     <h3>Product: {name}</h3>
                                     <h3>Quantity: {quantity}</h3>
-                                    <h3>Total: {quantity * price}</h3>
+                                    <h3>Total: {quantity * price}$</h3>
                                 </Box>
                             </StyledCartItem>
                         );
@@ -60,7 +60,7 @@ export const CartDrawer = ({ isCartOpen, setIsCartOpen, cartItems }) => {
                     setIsCartOpen(false);
                 }}>Clear Cart</Button>
                 {userData && <Button onClick={() => {
-                    dispatch(saveCart({ userId: userData?._id, cartItems }))
+                    dispatch(saveCart({ userId: userData?.user._id, cartItems }))
                 }}>Save</Button>}
             </StyledButtonCointainer>
         </Drawer>

@@ -29,7 +29,7 @@ export const Header = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
 
     const { t } = useTranslation();
-
+    
     return (
         <Box>
             <StyledAppBar>

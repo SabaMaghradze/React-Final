@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import './App.css';
-
 import { LanguageSelect, Link } from './components/atoms';
 import { RoutesComponent } from './routes/Routes';
 import { useTranslation } from 'react-i18next';
@@ -20,9 +19,9 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (userData?._id) {
-      dispatch(fetchCart(userData._id))
-    }
+    if (userData?.user._id) {
+      dispatch(fetchCart(userData.user._id));
+    };
   });
 
   useEffect(() => {

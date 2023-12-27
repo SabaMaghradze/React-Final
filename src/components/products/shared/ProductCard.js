@@ -25,8 +25,8 @@ export const ProductCard = ({ product }) => {
                 <Link to={`/products/categories/${category}/${_id}`}>
                     <StyledImage src={image} />
                     <StyledInfoContainer>
-                        <Text>Name: {name}</Text>
-                        <Text>Price: {price}</Text>
+                        <Text styles={{fontSize: '20px', color: 'black'}}>Name: {name}</Text>
+                        <Text fontSize='20px' color='black'>Price: {price}$</Text>
                     </StyledInfoContainer>
                 </Link>
                 <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
