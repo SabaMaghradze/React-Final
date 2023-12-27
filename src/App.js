@@ -8,20 +8,29 @@ import { useEffect } from 'react';
 import { fetchHomeProducts } from './redux';
 import { Header } from './components/header/Header';
 import { Grid } from '@mui/material';
-import { Homepage } from './pages';
+import { useUser } from './hooks';
+import { fetchCart } from './redux/slices/cartSlice';
 
 function App() {
 
   const { t, i18n } = useTranslation();
 
+  const { userData } = useUser();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchHomeProducts());
+    if (userData?._id) {
+      dispatch(fetchCart(userData._id))
+    }
   });
 
+  useEffect(() => {
+    dispatch(fetchHomeProducts());
+  }, [dispatch]);
+
   return (
-    
+
     <div>
       <Grid>
         <Header />

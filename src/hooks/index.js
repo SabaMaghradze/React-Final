@@ -3,3 +3,4 @@ export { useProduct } from './useProducts';
 export { useCart } from './useCart';
 export { useQueryParams } from './useQueryParams';
 export { useFetch } from './useFetch';
+export { useDebounce } from './useDebounce';

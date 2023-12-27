@@ -3,6 +3,8 @@ import { HomePageProducts } from '../components/products/HomePage'
 export const Homepage = () => {
 
     return (
-        <HomePageProducts />
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            <HomePageProducts />
+        </div>
     );
 };

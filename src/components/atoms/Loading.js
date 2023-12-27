@@ -10,6 +10,7 @@ const StyledLoadingContainer = styled(Box)(() => (
     }
 ));
 
+
 export const Loading = ({ size = 100, color = 'primary' }) => {
     return (
         <StyledLoadingContainer>
@@ -19,8 +20,11 @@ export const Loading = ({ size = 100, color = 'primary' }) => {
 };
 
 export const LoadingWrapper = ({ isLoading, children }) => {
+
     if (isLoading) {
         return <Loading />
     };
+
     return children;
+
 };

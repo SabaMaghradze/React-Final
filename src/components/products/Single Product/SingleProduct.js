@@ -8,7 +8,8 @@ import { ProductCardActions } from '../shared';
 const Container = styled(Box)(() => ({
   width: '100%',
   display: 'flex',
-  justifyContent: 'space-around'
+  justifyContent: 'center',
+  gap: '25px',
 }));
 
 const StyledImage = styled('img')(() => ({
@@ -20,7 +21,7 @@ const StyledImage = styled('img')(() => ({
 const Description = styled(Box)(() => ({
   display: 'flex',
   alignItems: 'center',
-  marginBottom: '15px'
+  marginBottom: '15px',
 }));
 
 export const SingleProduct = () => {
@@ -33,7 +34,6 @@ export const SingleProduct = () => {
   }, [id, categoryName, getData]);
 
   const { image, name, description, brand } = data?.product || {};
-  console.log(name);
 
   return (
     <LoadingWrapper isLoading={loading}>
@@ -41,16 +41,13 @@ export const SingleProduct = () => {
         <StyledImage src={image} />
         <Box>
           <Description>
-            <Text>Product Name</Text>
-            <Text>{name}</Text>
+            <Text>Product Name: {name}</Text>
           </Description>
           <Description>
-            <Text>Brand</Text>
-            <Text>{brand}</Text>
+            <Text>Brand: {brand}</Text>
           </Description>
           <Description>
-            <Text>Description</Text>
-            <Text>{description}</Text>
+            <Text>Description: {description}</Text>
           </Description>
           <ProductCardActions product={data?.product} />
         </Box>

@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useQueryParams } from '../../../hooks';
 import { useDispatch } from 'react-redux';
 import { fetchCategoryProducts } from '../../../redux';
-import { GridContainer, ProductCard } from '../shared';
+import { GridContainer, ProductCard, GridContainerTwo } from '../shared';
 import { LoadingWrapper } from '../../atoms';
 import { Sort } from './Sort';
 import { Paginate } from './Paginate';
@@ -15,7 +15,9 @@ const Container = styled(Box)(() => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: '100%'
+    gap:  '20px',
+    height: '100%',
+    marginTop: '10px'
 }));
 
 export const CategoryProductsList = () => {
@@ -41,11 +43,11 @@ export const CategoryProductsList = () => {
         <LoadingWrapper isLoading={loading} >
             <Sort value={sort} changeSort={changeSort} />
             <Container>
-                <GridContainer>
+                <GridContainerTwo>
                     {categoryProducts.map((product) => {
                         return <ProductCard key={product._id} product={product} />
                     })}
-                </GridContainer>
+                </GridContainerTwo>
                 <Paginate totalPages={totalPages} currentPage={page} changePage={changePage} />
             </Container>
         </LoadingWrapper>

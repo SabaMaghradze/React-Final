@@ -15,7 +15,9 @@ export const ProductCardActions = ({ product }) => {
     const { userData } = useUser();
     const { cartItems } = useCart();
 
-    const productInCart = cartItems.find((item) => item.product._id === product._id);
+    const productInCart = cartItems && product
+        ? cartItems.find((item) => item.product && item.product._id === product._id)
+        : null;
 
     const dispatch = useDispatch();
     const navigate = useNavigate();

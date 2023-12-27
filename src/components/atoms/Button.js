@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button as MUIButton } from "@mui/material";
 
-export const Button = ({ onClick, children, ...rest }) => {
+export const Button = ({ onClick, children, styles }) => {
     return (
-        <MUIButton onClick={onClick} {...rest} >
+        <MUIButton onClick={onClick} >
             {children}
         </MUIButton>
     )

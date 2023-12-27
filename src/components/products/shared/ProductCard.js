@@ -21,7 +21,7 @@ export const ProductCard = ({ product }) => {
     const { name, _id, price, image, category } = product;
     return (
         <Grid item xs={12} sm={12} md={4} lg={3} >
-            <Card sx={{borderRadius: '20px'}}>
+            <Card sx={{ borderRadius: '15px' }}>
                 <Link to={`/products/categories/${category}/${_id}`}>
                     <StyledImage src={image} />
                     <StyledInfoContainer>
