@@ -15,5 +15,10 @@
         "Laptop": "Laptop",
         "Mobile Device": "Mobile Device"
     },
-    "Categories": "Categories"
+    "Categories": "Categories",
+    "clear_cart": "Clear Cart",
+    "product": "Product",
+    "quantity": "Quantity",
+    "total": "Total",
+    "save": "Save"
 }
