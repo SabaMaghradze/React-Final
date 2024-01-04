@@ -15,8 +15,20 @@ const StyledInfoContainer = styled(Box)(() => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    padding: '20px 20px'
+    padding: '20px 20px',
+    height: '100px', // Set a fixed height for the product name container
+    overflow: 'hidden',
 }));
+
+const StyledProductName = styled(Text)(({ theme }) => ({
+    fontSize: '20px',
+    color: 'black',
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 2, // Set the maximum number of lines before ellipsis
+    overflow: 'hidden',
+}));
+
 
 export const ProductCard = ({ product }) => {
     const { name, _id, price, image, category } = product;
@@ -29,7 +41,7 @@ export const ProductCard = ({ product }) => {
                 <Link to={`/products/categories/${category}/${_id}`}>
                     <StyledImage src={image} />
                     <StyledInfoContainer>
-                        <Text styles={{ fontSize: '20px', color: 'black' }}>{name}</Text>
+                        <StyledProductName>{name}</StyledProductName>
                         <Text fontSize='20px' color='black'>{t('price')}: {price}$</Text>
                     </StyledInfoContainer>
                 </Link>
