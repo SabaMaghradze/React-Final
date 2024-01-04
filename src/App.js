@@ -19,8 +19,8 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (userData?.user._id) {
-      dispatch(fetchCart(userData.user._id));
+    if (userData?.user?._id) {
+      dispatch(fetchCart(userData.user?._id));
     };
   });
 

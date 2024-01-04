@@ -8,14 +8,14 @@ export const checkTokenValidity = (token) => {
 
 export const isAdmin = (user) => {
     if (!user) return false;
-    if (user.user.role.includes('admin')) {
+    if (user?.user?.role?.includes('admin')) {
         return true;
     };
 };
 
 export const getUserInitials = (user) => {
     if (!user) return '';
-    let initials = `${user.user.firstName[0]}.${user.user.lastName[0]}`;
+    let initials = `${user?.user?.firstName[0]}.${user?.user?.lastName[0]}`;
     return initials;
 };
 

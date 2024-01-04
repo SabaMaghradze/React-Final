@@ -2,6 +2,7 @@ import { Autocomplete, Box, TextField, styled } from "@mui/material";
 import { Link, Loading, Text } from "../atoms";
 import { useEffect, useState } from "react";
 import { useDebounce, useFetch } from "../../hooks";
+import { useTranslation } from "react-i18next";
 
 const StyledImage = styled('img')(() => ({
     width: 50,
@@ -9,15 +10,18 @@ const StyledImage = styled('img')(() => ({
     objectFit: 'cover'
 }));
 
+
 export const SearchBar = () => {
-
+    
     const [searchValue, setSearchValue] = useState('test');
-
+    
     const debouncedValue = useDebounce(500, searchValue);
-
+    
     const { getData, data, loading, setState } = useFetch();
-
+    
     const { products } = data || {};
+    
+    const { t } = useTranslation();
 
     useEffect(() => {
         if (!debouncedValue) {
@@ -52,7 +56,7 @@ export const SearchBar = () => {
                 <TextField {...params} value={searchValue} onChange={(e) => {
                     setSearchValue(e.target.value);
                 }}
-                    label='Search Product' InputProps={{ ...params.InputProps, type: 'search' }} sx={{ input: { color: '#FF9900' } }} InputLabelProps={{ style: { color: '#FF9900' } }} />
+                    label={t('search_product')} InputProps={{ ...params.InputProps, type: 'search' }} sx={{ input: { color: '#FF9900' } }} InputLabelProps={{ style: { color: '#FF9900' } }} />
             )
         }}
     />

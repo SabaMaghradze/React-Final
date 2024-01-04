@@ -7,5 +7,13 @@
     "add_product": "პროდუქტის დამატება",
     "edit": "შეცვლა",
     "delete": "წაშლა",
-    "update": "შეცვლა"
+    "update": "შეცვლა",
+    "search_product": "პროდუქტის ძიება",
+    "price": "ფასი",
+    "add_to_cart": "კალათაში დამატება",
+    "categories": {
+        "Laptop": "ლეპტოპი",
+        "Mobile Device": "მობილური ტელეფონი"
+    },
+    "Categories": "კატეგორიები"
 }

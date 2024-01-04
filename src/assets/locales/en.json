@@ -7,5 +7,13 @@
     "add_product": "Add Product",
     "edit": "Edit",
     "delete": "Delete",
-    "update": "Update"
+    "update": "Update",
+    "search_product": "Search Product",
+    "price": "Price",
+    "add_to_cart": "Add to Cart",
+    "categories": {
+        "Laptop": "Laptop",
+        "Mobile Device": "Mobile Device"
+    },
+    "Categories": "Categories"
 }
