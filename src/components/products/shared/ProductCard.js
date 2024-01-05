@@ -26,7 +26,7 @@ const StyledProductName = styled(Text)(({ theme }) => ({
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
     WebkitLineClamp: 2, // Set the maximum number of lines before ellipsis
-    overflow: 'hidden',
+    overflow: 'hidden'
 }));
 
 

@@ -39,11 +39,11 @@ export const CartDrawer = ({ isCartOpen, setIsCartOpen, cartItems }) => {
         <Drawer open={isCartOpen} onClose={() => setIsCartOpen(false)} anchor="right" >
             <LoadingWrapper isLoading={loading}>
                 {cartItems && Array.isArray(cartItems) && cartItems.length > 0 ? (
-                    cartItems.map((item) => {
-                        const { product, quantity } = item;
-                        const { name, _id, price, image } = product;
-                        return (
-                            <>
+                    <>
+                        {cartItems.map((item) => {
+                            const { product, quantity } = item;
+                            const { name, _id, price, image } = product;
+                            return (
                                 <StyledCartItem key={_id}>
                                     <StyledImage src={image} alt='no image' />
                                     <Box sx={{ paddingLeft: 5 }}>
@@ -52,18 +52,18 @@ export const CartDrawer = ({ isCartOpen, setIsCartOpen, cartItems }) => {
                                         <h3>{t('total')}: {quantity * price}$</h3>
                                     </Box>
                                 </StyledCartItem>
-                                <StyledButtonCointainer>
-                                    <Button onClick={() => {
-                                        dispatch(clearCart());
-                                        setIsCartOpen(false);
-                                    }}>{t('clear_cart')}</Button>
-                                    {userData && <Button onClick={() => {
-                                        dispatch(saveCart({ userId: userData?.user._id, cartItems }))
-                                    }}>Save</Button>}
-                                </StyledButtonCointainer>
-                            </>
-                        );
-                    })
+                            );
+                        })}
+                        <StyledButtonCointainer>
+                            <Button onClick={() => {
+                                dispatch(clearCart());
+                                setIsCartOpen(false);
+                            }}>{t('clear_cart')}</Button>
+                            {userData && <Button onClick={() => {
+                                dispatch(saveCart({ userId: userData?.user._id, cartItems }))
+                            }}>Save</Button>}
+                        </StyledButtonCointainer>
+                    </>
                 ) : (
                     <p>No items in the cart.</p>
                 )}
