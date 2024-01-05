@@ -49,7 +49,6 @@ export const ProductCardActions = ({ product }) => {
                 <Text styles={{ fontSize: '20px' }}>{productInCart.quantity}</Text>
                 <Button styles={{ fontSize: '20px' }} onClick={() => {
                     dispatch(addToCart(product))
-                    console.log(product);
                 }}>
                     +
                 </Button>

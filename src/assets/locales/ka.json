@@ -1,8 +1,9 @@
 {
     "home": "მთავარი გვერდი",
     "sign_in": "შესვლა",
-    "email": "იმეილი",
     "sign_up": "რეგისტრაცია",
+    "log_out": "გასვლა",
+    "email": "იმეილი",
     "add_products": "პროდუქტის დამატება",
     "add_product": "პროდუქტის დამატება",
     "edit": "შეცვლა",
@@ -19,6 +20,13 @@
     "clear_cart": "კალათის გასუფთავება",
     "product": "პროდუქტი",
     "quantity": "რაოდენობა",
-    "total": "ჯამი",
-    "save": "შენახვა"
+    "total": "სულ",
+    "save": "შენახვა",
+    "no_items_in_the_cart": "კალათა ცარიელია",
+    "description": "აღწერა",
+    "brand": "ბრენდი",
+    "password": "პაროლი",
+    "firstName": "სახელი",
+    "lastName": "გვარი",
+    "subtotal": "ჯამი"
 }

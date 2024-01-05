@@ -4,6 +4,7 @@ import { useFetch } from '../../../hooks/useFetch';
 import { LoadingWrapper, Text } from '../../atoms';
 import { styled, Box } from '@mui/material';
 import { ProductCardActions } from '../shared';
+import { useTranslation } from 'react-i18next';
 
 const Container = styled(Box)(() => ({
   width: '100%',
@@ -29,6 +30,8 @@ export const SingleProduct = () => {
   const { categoryName, id } = useParams();
   const { getData, data, loading } = useFetch();
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     getData(`/products/category/${categoryName}/${id}`);
   }, [id, categoryName, getData]);
@@ -41,13 +44,13 @@ export const SingleProduct = () => {
         <StyledImage src={image} />
         <Box>
           <Description>
-            <Text styles={{ fontSize: '30px' }}>Product Name: {name}</Text>
+            <Text styles={{ fontSize: '20px' }}>{t("product")}: {name}</Text>
           </Description>
           <Description>
-            <Text styles={{ fontSize: '30px' }}>Brand: {brand}</Text>
+            <Text styles={{ fontSize: '20px' }}>{t('brand')}: {brand}</Text>
           </Description>
           <Description>
-            <Text styles={{ fontSize: '30px' }}>Description: {description}</Text>
+            <Text styles={{ fontSize: '20px' }}>{t("description")}: {description}</Text>
           </Description>
           <ProductCardActions product={data?.product} />
         </Box>

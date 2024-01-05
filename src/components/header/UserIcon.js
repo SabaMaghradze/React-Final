@@ -7,6 +7,7 @@ import { logout } from "../../redux";
 import { useDispatch } from "react-redux";
 import { Button } from "../atoms";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const StyledBox = styled(Box)(() => ({
     display: 'flex',
@@ -18,6 +19,8 @@ export const UserIcon = () => {
 
     const { userData } = useUser();
     const [anchor, setAnchor] = useState(null);
+
+    const { t } = useTranslation();
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -34,10 +37,10 @@ export const UserIcon = () => {
                     {!userData && (
                         <>
                             <MenuItem>
-                                <Link to='/login'>Sign In</Link>
+                                <Link to='/login'>{t("sign_in")}</Link>
                             </MenuItem>
                             <MenuItem>
-                                <Link to='/signup'>Sign Up</Link>
+                                <Link to='/signup'>{t("sign_up")}</Link>
                             </MenuItem>
                         </>
                     )}
@@ -46,10 +49,10 @@ export const UserIcon = () => {
                             dispatch(logout())
                             navigate('/')
                         }}>
-                            Log Out
+                            {t("log_out")}
                         </Button>
                     </MenuItem>}
-                    {isAdmin(userData) && <MenuItem><Link to='/products/add'>Add Products</Link></MenuItem>}
+                    {isAdmin(userData) && <MenuItem><Link to='/products/add'>{t("add_product")}</Link></MenuItem>}
                 </StyledBox>
             </Menu>
         </Box>

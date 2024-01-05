@@ -1,8 +1,9 @@
 {
     "home": "Home",
     "sign_in": "Sign in",
-    "email": "Email",
     "sign_up": "Sign Up",
+    "log_out": "Log Out",
+    "email": "Email",
     "add_products": "Add Products",
     "add_product": "Add Product",
     "edit": "Edit",
@@ -20,5 +21,12 @@
     "product": "Product",
     "quantity": "Quantity",
     "total": "Total",
-    "save": "Save"
+    "save": "Save",
+    "no_items_in_the_cart": "No items in the cart",
+    "description": "Description",
+    "brand": "Brand",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "subtotal": "Subtotal"
 }
