@@ -28,5 +28,9 @@
     "password": "Password",
     "firstName": "First Name",
     "lastName": "Last Name",
-    "subtotal": "Subtotal"
+    "subtotal": "Subtotal",
+    "price_ascending": "Price Ascending",
+    "price_descending": "Price Descending",
+    "sort_by_alphabet": "From A to Z",
+    "sort_by_reverse_alphabet": "From Z to A"
 }

@@ -28,5 +28,9 @@
     "password": "პაროლი",
     "firstName": "სახელი",
     "lastName": "გვარი",
-    "subtotal": "ჯამი"
+    "subtotal": "ჯამი",
+    "price_ascending": "ფასის ზრდადობით",
+    "price_descending": "ფასის კლებადობით",
+    "sort_by_alphabet": "ანბანის მიხედვით: A-დან Z-მდე",
+    "sort_by_reverse_alphabet": "ანბანის მიხედვით: Z-დან A-მდე"
 }
