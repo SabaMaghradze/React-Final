@@ -31,6 +31,7 @@ const StyledProductName = styled(Text)(({ theme }) => ({
 
 
 export const ProductCard = ({ product }) => {
+    
     const { name, _id, price, image, category } = product;
 
     const { t } = useTranslation();

@@ -20,11 +20,11 @@ export const ProductForm = () => {
     mode: 'onChange'
   });
 
-  // useEffect(() => {
-  //   if (selectedProduct) {
-  //     setImage(selectedProduct.image);
-  //   }
-  // }, [selectedProduct]);
+  useEffect(() => {
+    if (selectedProduct) {
+      setImage(selectedProduct.image);
+    }
+  }, [selectedProduct]);
 
   useEffect(() => {
     return () => {
@@ -78,7 +78,7 @@ export const ProductForm = () => {
         return <Input name={name} value={value} onChange={onChange} label='Price' helperText={errors.price?.message} error={Boolean(errors.price)} />
       }} />
 
-      <FileBase64 type='file' multiple={false} onDone={({ base64 }) => {
+      <FileBase64 key={image} type='file' multiple={false} onDone={({ base64 }) => {
         setImage(base64);
       }} />
 

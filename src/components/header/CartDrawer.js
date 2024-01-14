@@ -49,7 +49,6 @@ const StyledProductName = styled(Text)(({ theme }) => ({
     overflow: 'hidden'
 }));
 
-
 export const CartDrawer = ({ isCartOpen, setIsCartOpen, cartItems }) => {
 
     const { userData } = useUser();

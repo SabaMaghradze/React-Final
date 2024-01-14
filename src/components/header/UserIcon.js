@@ -36,10 +36,10 @@ export const UserIcon = () => {
                 <StyledBox>
                     {!userData && (
                         <>
-                            <MenuItem>
+                            <MenuItem onClick={() => setAnchor(null)}>
                                 <Link to='/login'>{t("sign_in")}</Link>
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem onClick={() => setAnchor(null)}>
                                 <Link to='/signup'>{t("sign_up")}</Link>
                             </MenuItem>
                         </>
@@ -47,12 +47,13 @@ export const UserIcon = () => {
                     {userData && <MenuItem>
                         <Button onClick={() => {
                             dispatch(logout())
+                            setAnchor(null);
                             navigate('/')
                         }}>
                             {t("log_out")}
                         </Button>
                     </MenuItem>}
-                    {isAdmin(userData) && <MenuItem><Link to='/products/add'>{t("add_product")}</Link></MenuItem>}
+                    {isAdmin(userData) && <MenuItem onClick={() => setAnchor(null)}><Link to='/products/add'>{t("add_product")}</Link></MenuItem>}
                 </StyledBox>
             </Menu>
         </Box>
