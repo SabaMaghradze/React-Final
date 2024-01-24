@@ -9,6 +9,7 @@ import { Header } from './components/header/Header';
 import { Grid } from '@mui/material';
 import { useUser } from './hooks';
 import { fetchCart } from './redux/slices/cartSlice';
+import { Footer } from './components/footer';
 
 function App() {
 

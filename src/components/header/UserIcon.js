@@ -5,7 +5,6 @@ import { Link } from "../atoms";
 import { useState } from "react";
 import { logout } from "../../redux";
 import { useDispatch } from "react-redux";
-import { Button } from "../atoms";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -44,18 +43,16 @@ export const UserIcon = () => {
                             </MenuItem>
                         </>
                     )}
-                    {userData && <MenuItem>
-                        <Button onClick={() => {
-                            dispatch(logout())
-                            setAnchor(null);
-                            navigate('/')
-                        }}>
-                            {t("log_out")}
-                        </Button>
+                    {userData && <MenuItem onClick={() => {
+                        dispatch(logout())
+                        setAnchor(null);
+                        navigate('/')
+                    }}>
+                        {t("log_out")}
                     </MenuItem>}
-                    {isAdmin(userData) && <MenuItem onClick={() => setAnchor(null)}><Link to='/products/add'>{t("add_product")}</Link></MenuItem>}
+                    {isAdmin(userData) && <MenuItem onClick={() => setAnchor(null)}><Link style={{ color: 'black' }} to='/products/add'>{t("add_product")}</Link></MenuItem>}
                 </StyledBox>
             </Menu>
-        </Box>
+        </Box >
     );
 };
